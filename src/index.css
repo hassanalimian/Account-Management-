@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+:root {
+  --app-icon-scale: 1;
+  --app-icon-size-percent: 100%;
+}
+
+/* ========================================================================= */
+/* GLOBAL ICON SCALING ENGINE                                                */
+/* Controls icon dimensions globally without changing font sizes of labels   */
+/* ========================================================================= */
+
+/* Target all Lucide SVG icons across sidebars, dashboard, tables, etc. */
+svg.lucide,
+[data-app-icon="true"],
+.scalable-icon {
+  transform: scale(var(--app-icon-scale, 1));
+  transform-origin: center center;
+  transition: transform 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* Proportional scaling for icon container badges (categories, badges, cards) */
+.scalable-icon-container {
+  min-width: calc(var(--base-container-size, 1.25rem) * var(--app-icon-scale, 1));
+  min-height: calc(var(--base-container-size, 1.25rem) * var(--app-icon-scale, 1));
+  transition: min-width 0.12s ease-out, min-height 0.12s ease-out, width 0.12s ease-out, height 0.12s ease-out;
+}

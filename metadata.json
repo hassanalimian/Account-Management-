@@ -1,0 +1,6 @@
+{
+  "name": "Multi-Business Accounting System",
+  "description": "Multi-business account management and basic accounting system with business isolation, visual invoicing, shared banking, ledger calculations, and admin business limits.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
